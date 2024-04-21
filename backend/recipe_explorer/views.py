@@ -41,8 +41,6 @@ class SignUp(generics.GenericAPIView):
     queryset = User.objects.all()
 
     def post(self, request):
-        print("asdasd")
-
         serializer = UserSerializer(data=request.data)
         
         if serializer.is_valid():
@@ -54,7 +52,6 @@ class SignUp(generics.GenericAPIView):
 
             return Response({"token":token.key, "user":serializer.data})
         
-        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LogOut(generics.GenericAPIView):

@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f)=3zfp9fwdvvuga_72norn7_6j1jllxs*a&m-+q231_f%j=@f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["gdsadewa.com", "www.gdsadewa.com", "http://gdsadewa.com"]
+# ALLOWED_HOSTS = []
+
 
 # Application definition
 
