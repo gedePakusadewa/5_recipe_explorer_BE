@@ -5,7 +5,7 @@ from recipe_explorer.models import FavoriteModel
 class UserSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = User
-        fields = ['id', 'username', 'password', 'email']
+        fields = ['id', 'username', 'email']
 
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta(object):
