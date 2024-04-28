@@ -52,6 +52,41 @@ class LogIn(generics.GenericAPIView):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
         
+class UserDemo(generics.GenericAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    demo_username = "demo_user1"
+
+    def get(self, request):
+        try:
+            user_id = Token.objects.get(key=request.auth.key).user_id
+            user = User.objects.get(pk=user_id)
+
+            if not user:
+                return Response(
+                    {"message":"User not found"},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+            
+            is_user_demo = False
+            
+            if user.username == self.demo_username:
+                is_user_demo = True
+
+            return Response(
+                {"data" : is_user_demo}, 
+                status=status.HTTP_200_OK
+            )
+
+        except Exception as e:
+            print(e)
+            return Response(
+                {"Message":"Error In Log In"}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
 class SignUp(generics.GenericAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()

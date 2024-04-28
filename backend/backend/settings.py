@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f)=3zfp9fwdvvuga_72norn7_6j1jllxs*a&m-+q231_f%j=@f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ["gdsadewa.com", "www.gdsadewa.com", "http://gdsadewa.com"]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["gdsadewa.com", "www.gdsadewa.com", "http://gdsadewa.com"]
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -79,12 +79,22 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'lima_recipe',
+#         'USER': 'root',
+#         'PASSWORD' : 'temp123',
+#         'HOST' : 'localhost'
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lima_recipe',
-        'USER': 'root',
-        'PASSWORD' : 'temp123',
+        'NAME': 'gdsadewa_recipe_explorer',
+        'USER': 'gdsadewa_recipe_explore_1',
+        'PASSWORD' : '41&Nz9bV6pB,',
         'HOST' : 'localhost'
     }
 }
